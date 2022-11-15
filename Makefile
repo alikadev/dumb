@@ -1,6 +1,6 @@
 # +===========================+
 # | Author: Alikadev          |
-# | Version: 1.0              |
+# | Version: 0.1.1            |
 # |                           |
 # | Desc: Create the dumb.a   |
 # |                           |
@@ -14,16 +14,20 @@ LINKER		:=	ar
 D_INC		:= 	include
 D_SRC		:=	src
 D_BUILD		:=	build
+D_TEST		:=	test
 OUTPUT		:=	dumb.a
 
+
 # Project + Computer Specific
-CFLAGS		:=	-Ofast -std=c11 -Wno-unused-command-line-argument -fshort-enums
+CFLAGS		:=	-Ofast -std=c11 -Wno-unused-command-line-argument -fshort-enums -g
 LDFLAGS 	:=
-LINKFLAGS	:=rcs
+LINKFLAGS	:=	rcs
+
 
 # Will auto-generate
 SRC 		:=	$(shell find $(D_SRC) -name '*.c')
 OBJS		:=	$(subst $(D_SRC), $(D_BUILD), $(SRC:%c=%o))
+
 
 # OS Specific
 UNAME_S := $(shell uname -s)
@@ -36,6 +40,7 @@ ifeq ($(UNAME_S),Linux)
 	LDFLAGS+=
 endif
 
+
 # Implementation
 default: $(OUTPUT)
 help:
@@ -43,12 +48,18 @@ help:
 	@echo "  all     | Clean and build to .a lib"
 	@echo "  clean   | Clean"
 	@echo "  help    | Print this"
+	@echo "  tests   | Build the test"
 	@echo "  $(OUTPUT) = default"
 	@exit 0
 
 clean:
+	@mkdir -p $(D_BUILD)
 	@rm -rf $(D_BUILD)/*
-	@rm -f $(OUTPUT)	
+	@rm -f $(OUTPUT)
+	@$(MAKE) -C $(D_TEST) clean
+
+tests:
+	@$(MAKE) -C $(D_TEST) all
 
 all: clean $(OUTPUT)
 
