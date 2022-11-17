@@ -60,6 +60,7 @@ clean:
 
 tests:
 	@$(MAKE) -C $(D_TEST) all
+	@$(MAKE) -C $(D_TEST) test
 
 all: clean $(OUTPUT)
 

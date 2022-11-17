@@ -1,5 +1,7 @@
-#ifndef UNIX_COLOR_H
-#define UNIX_COLOR_H
+#ifndef COLOR_H
+#define COLOR_H
+
+#if defined LINUX || defined OSX
 
 // set color
 #define BLK		"\033[30m"
@@ -44,4 +46,6 @@
 #define RES 	"\033[0m"
 #define RESET 	RES
 
-#endif
+#endif // LINUX | OSX
+
+#endif // COLOR_H

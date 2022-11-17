@@ -1,6 +1,6 @@
 # +===========================+
 # | Author: Alikadev          |
-# | Version: 0.1              |
+# | Version: 0.1.1            |
 # |                           |
 # | Desc: Test dumb lib       |
 # |                           |
@@ -40,11 +40,23 @@ endif
 # Implementation
 all: clean $(TESTS)
 
-$(D_BUILD)/%.out: $(D_SRC)/%.c
-	@mkdir -p $(dir $@)
-	@echo Building test $< to $@
-	@$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS)
+help:
+	@echo "List of command:"
+	@echo "  all = default | build tests"
+	@echo "  clean         | Clean"
+	@echo "  help          | Print this"
+	@echo "  test          | Test tests"
+	@exit 0
+
+test: $(TESTS)
+	@echo Tests:
+	@$(foreach test, $(TESTS), echo "\n$(test)";./$(test);)
 
 clean:
 	@mkdir -p $(D_BUILD)
 	@rm -rf $(D_BUILD)/*
+
+$(D_BUILD)/%.out: $(D_SRC)/%.c
+	@mkdir -p $(dir $@)
+	@echo Building test $< to $@
+	@$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS)
