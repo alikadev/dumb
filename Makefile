@@ -7,6 +7,8 @@
 # | (May only work in my PC)  |
 # +===========================+
 
+MAKEFLAGS += --no-print-directory
+
 
 # Project specific
 CC 			:= 	gcc

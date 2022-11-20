@@ -4,47 +4,47 @@
 #if defined LINUX || defined OSX
 
 // set color
-#define BLK		"\033[30m"
-#define RED 	"\033[31m"
-#define GRN 	"\033[32m"
-#define YEL 	"\033[33m"
-#define BLU 	"\033[34m"
-#define MAG 	"\033[35m"
-#define CYN 	"\033[36m"
-#define WHT 	"\033[37m"
+#define BLK		"\e[30m"
+#define RED 	"\e[31m"
+#define GRN 	"\e[32m"
+#define YEL 	"\e[33m"
+#define BLU 	"\e[34m"
+#define MAG 	"\e[35m"
+#define CYN 	"\e[36m"
+#define WHT 	"\e[37m"
 
 // set light color
-#define LBLK	"\033[0;30m"
-#define LRED 	"\033[0;31m"
-#define LGRN 	"\033[0;32m"
-#define LYEL 	"\033[0;33m"
-#define LBLU 	"\033[0;34m"
-#define LMAG 	"\033[0;35m"
-#define LCYN 	"\033[0;36m"
-#define LWHT 	"\033[0;37m"
+#define LBLK	"\e[0;30m"
+#define LRED 	"\e[0;31m"
+#define LGRN 	"\e[0;32m"
+#define LYEL 	"\e[0;33m"
+#define LBLU 	"\e[0;34m"
+#define LMAG 	"\e[0;35m"
+#define LCYN 	"\e[0;36m"
+#define LWHT 	"\e[0;37m"
 
 // set bold color
-#define BBLK	"\033[1;30m"
-#define BRED 	"\033[1;31m"
-#define BGRN 	"\033[1;32m"
-#define BYEL 	"\033[1;33m"
-#define BBLU 	"\033[1;34m"
-#define BMAG 	"\033[1;35m"
-#define BCYN 	"\033[1;36m"
-#define BWHT 	"\033[1;37m"
+#define BBLK	"\e[1;30m"
+#define BRED 	"\e[1;31m"
+#define BGRN 	"\e[1;32m"
+#define BYEL 	"\e[1;33m"
+#define BBLU 	"\e[1;34m"
+#define BMAG 	"\e[1;35m"
+#define BCYN 	"\e[1;36m"
+#define BWHT 	"\e[1;37m"
 
 // set background
-#define BLKB	"\033[40m"
-#define REDB	"\033[41m"
-#define GRNB 	"\033[42m"
-#define YELB 	"\033[43m"
-#define BLUB 	"\033[44m"
-#define MAGB 	"\033[45m"
-#define CYNB 	"\033[46m"
-#define WHTB 	"\033[47m"
+#define BLKB	"\e[40m"
+#define REDB	"\e[41m"
+#define GRNB 	"\e[42m"
+#define YELB 	"\e[43m"
+#define BLUB 	"\e[44m"
+#define MAGB 	"\e[45m"
+#define CYNB 	"\e[46m"
+#define WHTB 	"\e[47m"
 
-#define RES 	"\033[0m"
-#define RESET 	RES
+#define RESET	"\e[0m"
+#define RES 	RESET
 
 #endif // LINUX | OSX
 

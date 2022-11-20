@@ -1,7 +1,18 @@
-#include <dumb/str.h>
+#include <dumb/string.h>
 #include <stdlib.h>
 
 static char buff[TOKENS_MAX_LENGTH] = {0};
+
+#if defined LINUX
+
+char *strdup(const char *ptr)
+{
+	char *result = (char *)malloc(strlen(ptr)+1);
+	strcpy(result, ptr);
+	return result;
+}
+
+#endif
 
 bool streq(const char *s1, const char *s2)
 {

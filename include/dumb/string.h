@@ -17,4 +17,10 @@ int strtokc(dumb_list *tokens, const char *src, const char delim);
 
 void strtok_free(dumb_list *list);
 
+#if defined LINUX
+
+char *strdup(const char *);
+
+#endif
+
 #endif

@@ -70,23 +70,29 @@ void dumb_list_ror(dumb_list *list);
 /// shift left from start to struct end
 /// start index will be free
 /// Will remove the last element
-void dumb_list_shl_part(dumb_list *list, size_t start);
+void dumb_list_shl_part(dumb_list *list, size_t end);
 
 /// shift right from struct start to end
 /// end will be free
 /// Will remove the first element
-void dumb_list_shr_part(dumb_list *list, size_t end);
+void dumb_list_shr_part(dumb_list *list, size_t start);
 
 #ifdef USE_DUMB_LIST_QUICK_NAME
 
-#define dl_init dumb_list_init
-#define dl_free dumb_list_free
-#define dl_pop dumb_list_pop
-#define dl_popn dumb_list_pop_n
-#define dl_del dumb_list_del
-#define dl_deln dumb_list_del_n
-#define dl_push dumb_list_push
-#define dl_pushn dumb_list_push_n
+#define dl_init 	dumb_list_init
+#define dl_free 	dumb_list_free
+#define dl_pop 		dumb_list_pop
+#define dl_popn 	dumb_list_pop_n
+#define dl_del 		dumb_list_del
+#define dl_deln 	dumb_list_del_n
+#define dl_push 	dumb_list_push
+#define dl_pushn 	dumb_list_push_n
+#define dl_shr 		dumb_list_shr
+#define dl_shrp 	dumb_list_shr_part
+#define dl_shl 		dumb_list_shl
+#define dl_shlp 	dumb_list_shl_part
+#define dl_ror 		dumb_list_ror
+#define dl_rol 		dumb_list_rol
 
 #endif
 

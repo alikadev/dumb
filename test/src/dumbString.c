@@ -1,5 +1,5 @@
 #include "dumbtest.h"
-#include <dumb/str.h>
+#include <dumb/string.h>
 
 #define STR1 "This is a string!"
 #define STR1C 'i'
@@ -47,5 +47,8 @@ int main(void)
 	}
 	print_state("strtokc", SUCCESS);
 	strtok_free(&tokens);
+
+		// CHECKED WITH VALGRIND
+	print_state("strtokfree", SUCCESS);
 	return 0;
 }

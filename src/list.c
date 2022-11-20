@@ -86,4 +86,20 @@ dumb_list *dumb_list_pop(dumb_list *list)
 	return dumb_list_pop_n(list, 1);
 }
 
+void dumb_list_shr_part(dumb_list *list, size_t start)
+{
+	if(start==0) start=1;
+	for(int i=list->length; i >= start; i--){
+		memcpy(
+			list->ptr+i*list->m_sizeof,
+			list->ptr+(i-1)*list->m_sizeof,
+			list->m_sizeof);
+	}
+}
+
+void dumb_list_shr(dumb_list *list)
+{
+	dumb_list_shr_part(list, 1);
+}
+
 

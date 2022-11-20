@@ -1,11 +1,13 @@
 # +===========================+
 # | Author: Alikadev          |
-# | Version: 0.1.1            |
+# | Version: 0.1.2            |
 # |                           |
 # | Desc: Test dumb lib       |
 # |                           |
 # | (May only work in my PC)  |
 # +===========================+
+
+MAKEFLAGS += --no-print-directory
 
 
 # Project specific
@@ -32,7 +34,7 @@ ifeq ($(UNAME_S),Darwin)
 	LDFLAGS+=-L/opt/homebrew/lib
 endif
 ifeq ($(UNAME_S),Linux)
-	CFLAGS+=-DLINUX
+	CFLAGS+=-DLINUX -Wno-format-overflow
 	LDFLAGS+=
 endif
 
